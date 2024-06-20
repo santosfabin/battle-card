@@ -1,0 +1,135 @@
+main {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	width: 100%;
+}
+.text{
+    font-size: 55px;
+}
+.container-card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.card {
+	box-sizing: border-box;
+	margin: 0 10px;
+	width: 200px;
+	height: 300px;
+	background-color: #1e2a3a;
+	position: relative;
+	transition: transform 0.3s;
+	overflow: hidden;
+	box-shadow: 0 10px 10px #33333333;
+	cursor: pointer;
+	padding: 13px;
+    border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	gap: 7px;
+}
+
+.card::before {
+	content: "";
+	background-color: #ffffff22;
+	box-shadow: 0px 0px 30px #ffffff44;
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: -140px;
+	right: -120px;
+	transition: right 0.3s, top 0.3s, background-color 0.3s, box-shadow 0.3s;
+	transform: rotate(30deg);
+}
+
+.card:hover {
+	transform: perspective(500px) rotateX(5deg) scale(1.06);
+}
+
+.card:hover::before {
+	position: absolute;
+	right: -90px;
+	top: -60px;
+	background-color: #ffffff44;
+	box-shadow: 0px 0px 30px #ffffff88;
+}
+.atk-game {
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #998d22;
+	transform: scale(1);
+	transition: transform 0.3s, bottom 0.3s, left 0.3s;
+	bottom: -5px;
+	left: 5px;
+	user-select: none;
+	color: white;
+	border-radius: 100%;
+}
+.card:hover ~ .atk-game {
+	transform: scale(1.1);
+	transition: transform 0.3s, bottom 0.3s, left 0.3s;
+	bottom: -15px;
+	left: -2px;
+}
+.life-game {
+	position: absolute;
+	height: 56px;
+	width: 56px;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	background-color: #6b2f2f;
+	transform: scale(1);
+	transition: transform 0.3s, bottom 0.3s, right 0.3s;
+	bottom: -5px;
+	right: 5px;
+	user-select: none;
+	color: white;
+	border-radius: 100%;
+}
+.life-game::before {
+	content: "";
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 35px solid #6b2f2f;
+    position: absolute;
+    top: -20px;
+    z-index: -1;
+}
+.card:hover ~ .life-game {
+	transform: scale(1.1);
+	transition: transform 0.3s, bottom 0.3s, right 0.3s;
+	bottom: -15px;
+	right: -2px;
+}
+.img-card {
+	background-color: #37495f;
+	width: 100%;
+	height: 500px;
+	border-radius: 7px;
+	/* border-top-right-radius: 70px; */
+}
+.description {
+	background: #3d5774;
+	height: 100%;
+	width: 100%;
+	border-radius: 7px;
+}
+.title {
+	background: #0f161f;
+	height: 80px;
+	width: 100%;
+	border-radius: 7px;
+}
